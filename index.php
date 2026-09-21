@@ -11,47 +11,47 @@ function whatsapp_url(string $phone, string $message): string
 
 $projectWhatsapp = whatsapp_url(
     $site['phone_whatsapp'],
-    'Olá, Anoar! Gostaria de conversar sobre um projeto digital.'
+    'Olá, Anoar! Quero conversar sobre um projeto para minha empresa.'
 );
 
 $services = [
     [
         'number' => '01',
         'title' => 'Posicionamento digital',
-        'description' => 'Estratégia para organizar sua presença digital, comunicar valor com clareza e ocupar o espaço certo no mercado.',
-        'items' => ['Estratégia de presença', 'Identidade e comunicação', 'Jornada digital'],
+        'text' => 'Estratégia para organizar presença, mensagem e percepção de marca no ambiente digital.',
+        'detail' => 'Estratégia · marca · presença'
     ],
     [
         'number' => '02',
         'title' => 'Marketing',
-        'description' => 'Planejamento e execução para transformar comunicação em relacionamento, demanda e oportunidades de negócio.',
-        'items' => ['Planejamento', 'Conteúdo e campanhas', 'Performance digital'],
+        'text' => 'Planejamento de comunicação e ações digitais conectadas aos objetivos reais do negócio.',
+        'detail' => 'Conteúdo · campanhas · performance'
     ],
     [
         'number' => '03',
         'title' => 'Sites',
-        'description' => 'Sites institucionais, landing pages e experiências digitais rápidas, responsivas e alinhadas à sua marca.',
-        'items' => ['UX e interface', 'Desenvolvimento', 'SEO técnico'],
+        'text' => 'Sites institucionais e landing pages com direção visual, experiência e desenvolvimento responsivo.',
+        'detail' => 'UX · UI · desenvolvimento'
     ],
     [
         'number' => '04',
         'title' => 'Sistemas',
-        'description' => 'Soluções sob medida para digitalizar processos, integrar operações e transformar necessidades em software.',
-        'items' => ['Sistemas web', 'Integrações', 'Automação de processos'],
+        'text' => 'Soluções web sob medida para digitalizar operações, integrar informações e reduzir trabalho manual.',
+        'detail' => 'Software · integrações · automação'
     ],
     [
         'number' => '05',
         'title' => 'Hospedagem',
-        'description' => 'Infraestrutura para manter sites e sistemas disponíveis, protegidos e acompanhados por suporte técnico.',
-        'items' => ['Hospedagem gerenciada', 'SSL e segurança', 'Suporte técnico'],
+        'text' => 'Infraestrutura e acompanhamento técnico para manter sites e sistemas publicados com segurança.',
+        'detail' => 'Hospedagem · SSL · suporte'
     ],
 ];
 
 $process = [
-    ['step' => '01', 'title' => 'Entender', 'text' => 'Começamos pelo negócio, pelo público e pelo que precisa mudar — não por uma ferramenta pronta.'],
-    ['step' => '02', 'title' => 'Planejar', 'text' => 'Definimos prioridades, escopo, arquitetura e uma direção clara para o projeto.'],
-    ['step' => '03', 'title' => 'Construir', 'text' => 'Design, conteúdo e tecnologia avançam juntos, com decisões orientadas ao objetivo.'],
-    ['step' => '04', 'title' => 'Evoluir', 'text' => 'Publicamos, acompanhamos e criamos base para a operação continuar evoluindo.'],
+    ['number' => '01', 'title' => 'Diagnóstico', 'text' => 'Entendemos o negócio, o momento, o público e o problema antes de propor qualquer solução.'],
+    ['number' => '02', 'title' => 'Direção', 'text' => 'Definimos prioridades, linguagem, escopo e arquitetura para que cada decisão tenha um motivo.'],
+    ['number' => '03', 'title' => 'Construção', 'text' => 'Estratégia, design e tecnologia avançam juntos até a entrega do que foi planejado.'],
+    ['number' => '04', 'title' => 'Continuidade', 'text' => 'Depois da publicação, podemos cuidar da infraestrutura e da evolução digital do projeto.'],
 ];
 
 $currentYear = date('Y');
@@ -61,13 +61,16 @@ $currentYear = date('Y');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0b0b0d">
+    <meta name="theme-color" content="#26110F">
     <meta name="description" content="A Anoar atua com posicionamento digital, marketing, criação de sites e sistemas e hospedagem de sites. Estratégia, design e tecnologia para negócios.">
-    <meta property="og:title" content="Anoar — Estratégia, design e tecnologia">
-    <meta property="og:description" content="Posicionamento digital, marketing, sites, sistemas e hospedagem para empresas que querem avançar no digital.">
+    <meta property="og:title" content="Anoar — Posicionamento, marketing e tecnologia">
+    <meta property="og:description" content="Estratégia, marketing, sites, sistemas e infraestrutura digital para empresas.">
     <meta property="og:type" content="website">
-    <title>Anoar — Posicionamento digital, marketing, sites e sistemas</title>
-    <link rel="icon" type="image/svg+xml" href="assets/img/anr-mark.svg">
+    <title>Anoar — Posicionamento, marketing, sites e sistemas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -76,8 +79,7 @@ $currentYear = date('Y');
     <header class="site-header" id="inicio">
         <div class="container header-inner">
             <a class="brand" href="#inicio" aria-label="Anoar — início">
-                <img src="assets/img/anr-mark.svg" alt="" width="36" height="36">
-                <span>ANOAR</span>
+                <img src="assets/img/anoar-wordmark.svg" alt="Anoar" width="154" height="38">
             </a>
 
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
@@ -85,241 +87,218 @@ $currentYear = date('Y');
             </button>
 
             <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
-                <a href="#solucoes">Soluções</a>
-                <a href="#metodo">Como trabalhamos</a>
-                <a href="#infraestrutura">Hospedagem</a>
+                <a href="#atuacao">Atuação</a>
+                <a href="#metodo">Método</a>
+                <a href="#hospedagem">Hospedagem</a>
                 <a href="#contato">Contato</a>
-                <a class="nav-cta" href="<?= htmlspecialchars($projectWhatsapp, ENT_QUOTES) ?>" target="_blank" rel="noopener noreferrer">Falar sobre um projeto</a>
+                <a class="nav-cta" href="<?= htmlspecialchars($projectWhatsapp, ENT_QUOTES) ?>" target="_blank" rel="noopener noreferrer">Iniciar projeto</a>
             </nav>
         </div>
     </header>
 
     <main id="conteudo">
         <section class="hero" aria-labelledby="hero-title">
-            <div class="hero-orbit hero-orbit-one"></div>
-            <div class="hero-orbit hero-orbit-two"></div>
+            <div class="hero-grain" aria-hidden="true"></div>
 
             <div class="container hero-grid">
-                <div class="hero-copy reveal">
-                    <span class="eyebrow">ESTRATÉGIA · DESIGN · TECNOLOGIA</span>
-                    <h1 id="hero-title">Construímos presença digital que <span>faz sentido para o negócio.</span></h1>
-                    <p>A Anoar conecta posicionamento, marketing e tecnologia para criar experiências digitais mais claras, profissionais e preparadas para crescer.</p>
+                <div class="hero-main reveal">
+                    <span class="eyebrow">POSICIONAMENTO · MARKETING · TECNOLOGIA</span>
+                    <h1 id="hero-title">Presença digital com <em>direção, forma e estrutura.</em></h1>
+                    <p>Anoar é uma empresa de soluções digitais. Unimos estratégia, comunicação e desenvolvimento para construir presenças digitais coerentes com o negócio.</p>
 
                     <div class="hero-actions">
-                        <a class="button button-primary" href="#solucoes">Conhecer soluções</a>
-                        <a class="button button-ghost" href="<?= htmlspecialchars($projectWhatsapp, ENT_QUOTES) ?>" target="_blank" rel="noopener noreferrer">
-                            Falar sobre um projeto
-                            <span aria-hidden="true">↗</span>
+                        <a class="button button-primary" href="#atuacao">Conheça nossa atuação</a>
+                        <a class="button button-text" href="<?= htmlspecialchars($projectWhatsapp, ENT_QUOTES) ?>" target="_blank" rel="noopener noreferrer">
+                            Falar sobre um projeto <span aria-hidden="true">↗</span>
                         </a>
                     </div>
+                </div>
 
-                    <div class="hero-proof">
-                        <span>Posicionamento</span>
-                        <i></i>
+                <aside class="hero-aside reveal reveal-delay" aria-label="Áreas de atuação">
+                    <div class="hero-aside-head">
+                        <span>ANOAR / 2026</span>
+                        <span>BRASIL</span>
+                    </div>
+
+                    <div class="hero-logo-stage">
+                        <img src="assets/img/anoar-wordmark.svg" alt="Anoar">
+                    </div>
+
+                    <div class="hero-capabilities">
+                        <span>Posicionamento digital</span>
                         <span>Marketing</span>
-                        <i></i>
-                        <span>Desenvolvimento</span>
-                        <i></i>
-                        <span>Infraestrutura</span>
+                        <span>Sites</span>
+                        <span>Sistemas</span>
+                        <span>Hospedagem</span>
                     </div>
-                </div>
+                </aside>
+            </div>
 
-                <div class="hero-system reveal reveal-delay" aria-label="Áreas de atuação da Anoar">
-                    <div class="system-top">
-                        <span>ANOAR / DIGITAL</span>
-                        <span>2026</span>
-                    </div>
+            <div class="container hero-foot reveal">
+                <span>Estratégia para posicionar.</span>
+                <span>Design para comunicar.</span>
+                <span>Tecnologia para sustentar.</span>
+            </div>
+        </section>
 
-                    <div class="system-mark">
-                        <img src="assets/img/anr-mark.svg" alt="ANR." width="500" height="500">
-                        <p>Estratégia para posicionar.<br>Tecnologia para construir.<br>Estrutura para sustentar.</p>
-                    </div>
+        <section class="manifesto" aria-labelledby="manifesto-title">
+            <div class="container manifesto-grid">
+                <span class="section-index reveal">01 / SOBRE</span>
 
-                    <div class="system-list">
-                        <div><span>01</span><strong>Posicionamento</strong></div>
-                        <div><span>02</span><strong>Marketing</strong></div>
-                        <div><span>03</span><strong>Sites</strong></div>
-                        <div><span>04</span><strong>Sistemas</strong></div>
-                        <div><span>05</span><strong>Hospedagem</strong></div>
+                <div class="manifesto-copy reveal reveal-delay">
+                    <h2 id="manifesto-title">Digital não é um canal isolado. <em>É parte da experiência da empresa.</em></h2>
+                    <div class="manifesto-text">
+                        <p>Um bom site não resolve uma mensagem confusa. Marketing não sustenta uma experiência ruim. Tecnologia sem direção apenas digitaliza problemas.</p>
+                        <p>Nosso trabalho é conectar essas partes para que a presença digital tenha coerência — da estratégia à infraestrutura.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="intro-section" aria-labelledby="intro-title">
-            <div class="container intro-grid">
-                <div class="intro-label reveal">
-                    <span class="eyebrow eyebrow-dark">O QUE FAZEMOS</span>
-                </div>
-                <div class="intro-copy reveal reveal-delay">
-                    <h2 id="intro-title">Digital não é só aparecer. É ser entendido, encontrado e ter estrutura para entregar.</h2>
-                    <p>Por isso, trabalhamos diferentes camadas da presença digital de uma empresa — da estratégia ao desenvolvimento e à infraestrutura.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="services-section" id="solucoes" aria-labelledby="services-title">
+        <section class="services" id="atuacao" aria-labelledby="services-title">
             <div class="container">
-                <div class="section-heading reveal">
+                <div class="section-head reveal">
                     <div>
-                        <span class="eyebrow eyebrow-dark">SOLUÇÕES</span>
-                        <h2 id="services-title">Competências que funcionam melhor quando trabalham juntas.</h2>
+                        <span class="section-index">02 / ATUAÇÃO</span>
+                        <h2 id="services-title">O que a Anoar constrói.</h2>
                     </div>
-                    <p>Podemos atuar em uma frente específica ou estruturar um projeto combinando estratégia, comunicação e tecnologia.</p>
+                    <p>Projetos podem começar por uma única necessidade ou combinar diferentes frentes conforme o momento da empresa.</p>
                 </div>
 
-                <div class="services-grid">
+                <div class="service-list">
                     <?php foreach ($services as $index => $service): ?>
-                        <article class="service-card reveal" style="--delay: <?= (int) ($index % 3) * 70 ?>ms">
-                            <div class="service-number"><?= htmlspecialchars($service['number']) ?></div>
+                        <article class="service-row reveal" style="--delay: <?= (int) $index * 55 ?>ms">
+                            <span class="service-number"><?= htmlspecialchars($service['number']) ?></span>
                             <h3><?= htmlspecialchars($service['title']) ?></h3>
-                            <p><?= htmlspecialchars($service['description']) ?></p>
-                            <ul>
-                                <?php foreach ($service['items'] as $item): ?>
-                                    <li><?= htmlspecialchars($item) ?></li>
-                                <?php endforeach; ?>
-                            </ul>
+                            <p><?= htmlspecialchars($service['text']) ?></p>
+                            <span class="service-detail"><?= htmlspecialchars($service['detail']) ?></span>
                         </article>
                     <?php endforeach; ?>
-
-                    <article class="service-card service-card-cta reveal">
-                        <span class="eyebrow">PROJETO SOB MEDIDA</span>
-                        <h3>Seu desafio não cabe em uma categoria?</h3>
-                        <p>Ótimo. Projetos digitais reais quase nunca começam prontos. Podemos entender o cenário e definir a melhor combinação de soluções.</p>
-                        <a href="<?= htmlspecialchars($projectWhatsapp, ENT_QUOTES) ?>" target="_blank" rel="noopener noreferrer">Conversar sobre o desafio <span aria-hidden="true">↗</span></a>
-                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="method-section" id="metodo" aria-labelledby="method-title">
-            <div class="container">
-                <div class="method-head reveal">
-                    <div>
-                        <span class="eyebrow">COMO TRABALHAMOS</span>
-                        <h2 id="method-title">Menos improviso.<br>Mais direção.</h2>
-                    </div>
-                    <p>Projetos melhores começam com contexto. Nosso processo organiza decisões antes de transformar tudo em layout, campanha ou código.</p>
+        <section class="statement" aria-label="Posicionamento Anoar">
+            <div class="container statement-inner reveal">
+                <span>Anoar</span>
+                <p>Entre uma ideia e uma experiência digital consistente existe estratégia, linguagem, design, código e operação.</p>
+            </div>
+        </section>
+
+        <section class="method" id="metodo" aria-labelledby="method-title">
+            <div class="container method-grid">
+                <div class="method-intro reveal">
+                    <span class="section-index">03 / MÉTODO</span>
+                    <h2 id="method-title">Antes de executar, <em>entendemos.</em></h2>
+                    <p>Não começamos escolhendo ferramenta, layout ou campanha. Começamos pelo contexto para decidir o que realmente precisa ser construído.</p>
                 </div>
 
-                <div class="process-grid">
+                <div class="process-list">
                     <?php foreach ($process as $index => $item): ?>
-                        <article class="process-item reveal" style="--delay: <?= (int) $index * 70 ?>ms">
-                            <span><?= htmlspecialchars($item['step']) ?></span>
-                            <h3><?= htmlspecialchars($item['title']) ?></h3>
-                            <p><?= htmlspecialchars($item['text']) ?></p>
+                        <article class="process-row reveal" style="--delay: <?= (int) $index * 70 ?>ms">
+                            <span><?= htmlspecialchars($item['number']) ?></span>
+                            <div>
+                                <h3><?= htmlspecialchars($item['title']) ?></h3>
+                                <p><?= htmlspecialchars($item['text']) ?></p>
+                            </div>
                         </article>
                     <?php endforeach; ?>
                 </div>
             </div>
         </section>
 
-        <section class="infrastructure-section" id="infraestrutura" aria-labelledby="infra-title">
-            <div class="container infrastructure-grid">
-                <div class="infra-copy reveal">
-                    <span class="eyebrow">HOSPEDAGEM & INFRAESTRUTURA</span>
-                    <h2 id="infra-title">Depois de publicar, o trabalho continua.</h2>
-                    <p>Também cuidamos da camada que mantém seu projeto no ar. Hospedagem, segurança e suporte técnico fazem parte de uma presença digital profissional.</p>
-                    <a class="text-link-light" href="<?= htmlspecialchars($projectWhatsapp, ENT_QUOTES) ?>" target="_blank" rel="noopener noreferrer">
+        <section class="hosting" id="hospedagem" aria-labelledby="hosting-title">
+            <div class="container hosting-shell">
+                <div class="hosting-copy reveal">
+                    <span class="section-index section-index-light">04 / HOSPEDAGEM</span>
+                    <h2 id="hosting-title">Publicar é só o começo.</h2>
+                    <p>Sites e sistemas precisam de uma base confiável depois que entram no ar. A Anoar também oferece hospedagem e acompanhamento técnico para projetos digitais.</p>
+                    <a class="button button-cream" href="<?= htmlspecialchars($projectWhatsapp, ENT_QUOTES) ?>" target="_blank" rel="noopener noreferrer">
                         Falar sobre hospedagem <span aria-hidden="true">↗</span>
                     </a>
                 </div>
 
-                <div class="infra-panel reveal reveal-delay">
-                    <div class="infra-status">
-                        <span class="status-dot"></span>
-                        <span>INFRAESTRUTURA DIGITAL</span>
+                <div class="hosting-panel reveal reveal-delay">
+                    <div class="hosting-status">
+                        <i></i>
+                        <span>INFRAESTRUTURA</span>
                     </div>
-                    <div class="infra-row">
-                        <span>Hospedagem</span>
-                        <strong>Gerenciada</strong>
-                    </div>
-                    <div class="infra-row">
-                        <span>Segurança</span>
-                        <strong>SSL + boas práticas</strong>
-                    </div>
-                    <div class="infra-row">
-                        <span>Operação</span>
-                        <strong>Suporte técnico</strong>
-                    </div>
-                    <div class="infra-row">
-                        <span>Projetos</span>
-                        <strong>Sites e sistemas</strong>
-                    </div>
+                    <dl>
+                        <div>
+                            <dt>Hospedagem</dt>
+                            <dd>Sites e sistemas</dd>
+                        </div>
+                        <div>
+                            <dt>Segurança</dt>
+                            <dd>SSL e boas práticas</dd>
+                        </div>
+                        <div>
+                            <dt>Operação</dt>
+                            <dd>Acompanhamento técnico</dd>
+                        </div>
+                        <div>
+                            <dt>Continuidade</dt>
+                            <dd>Suporte e evolução</dd>
+                        </div>
+                    </dl>
                 </div>
             </div>
         </section>
 
-        <section class="fit-section" aria-labelledby="fit-title">
+        <section class="fit" aria-labelledby="fit-title">
             <div class="container fit-grid">
-                <div class="section-heading compact reveal">
-                    <div>
-                        <span class="eyebrow eyebrow-dark">QUANDO A ANOAR FAZ SENTIDO</span>
-                        <h2 id="fit-title">Para empresas que precisam transformar presença digital em estrutura de negócio.</h2>
-                    </div>
+                <div class="fit-heading reveal">
+                    <span class="section-index">05 / QUANDO FAZ SENTIDO</span>
+                    <h2 id="fit-title">Quando o digital precisa acompanhar o nível do seu negócio.</h2>
                 </div>
 
-                <div class="fit-list reveal reveal-delay">
-                    <div>
-                        <span>01</span>
-                        <p>Quando a marca existe, mas a comunicação ainda não transmite o nível da empresa.</p>
-                    </div>
-                    <div>
-                        <span>02</span>
-                        <p>Quando o site precisa deixar de ser cartão de visita e passar a apoiar objetivos comerciais.</p>
-                    </div>
-                    <div>
-                        <span>03</span>
-                        <p>Quando processos manuais já pedem um sistema, integração ou automação.</p>
-                    </div>
-                    <div>
-                        <span>04</span>
-                        <p>Quando marketing, tecnologia e operação precisam começar a conversar entre si.</p>
-                    </div>
+                <div class="fit-items reveal reveal-delay">
+                    <p>Quando sua empresa cresceu, mas a presença digital ficou para trás.</p>
+                    <p>Quando o site precisa comunicar melhor, gerar confiança ou apoiar o comercial.</p>
+                    <p>Quando processos internos já pedem sistema, integração ou automação.</p>
+                    <p>Quando marketing, marca, tecnologia e operação precisam seguir a mesma direção.</p>
                 </div>
             </div>
         </section>
 
-        <section class="contact-section" id="contato" aria-labelledby="contact-title">
-            <div class="container contact-shell reveal">
-                <div class="contact-copy">
-                    <span class="eyebrow">VAMOS CONVERSAR</span>
-                    <h2 id="contact-title">Conte o que sua empresa precisa construir ou melhorar.</h2>
-                    <p>O WhatsApp é apenas o canal de contato. A conversa começa pelo seu negócio, pelo momento da empresa e pelo objetivo do projeto.</p>
+        <section class="contact" id="contato" aria-labelledby="contact-title">
+            <div class="container contact-grid">
+                <div class="contact-label reveal">
+                    <span class="section-index section-index-light">06 / CONTATO</span>
                 </div>
-                <div class="contact-actions">
-                    <a class="button button-light" href="<?= htmlspecialchars($projectWhatsapp, ENT_QUOTES) ?>" target="_blank" rel="noopener noreferrer">
-                        Iniciar uma conversa
-                        <span aria-hidden="true">↗</span>
-                    </a>
-                    <span class="contact-phone"><?= htmlspecialchars($site['phone_display']) ?></span>
+
+                <div class="contact-main reveal reveal-delay">
+                    <h2 id="contact-title">Vamos entender o que sua empresa precisa <em>construir agora.</em></h2>
+                    <p>Conte um pouco sobre o negócio, o cenário atual e o objetivo. A partir daí, podemos direcionar a conversa para a solução certa.</p>
+
+                    <div class="contact-actions">
+                        <a class="button button-cream" href="<?= htmlspecialchars($projectWhatsapp, ENT_QUOTES) ?>" target="_blank" rel="noopener noreferrer">
+                            Iniciar uma conversa <span aria-hidden="true">↗</span>
+                        </a>
+                        <span><?= htmlspecialchars($site['phone_display']) ?></span>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-main">
-            <div class="footer-brand">
-                <a class="brand brand-footer" href="#inicio" aria-label="Anoar — início">
-                    <img src="assets/img/anr-mark.svg" alt="" width="32" height="32">
-                    <span>ANOAR</span>
-                </a>
-                <p>Posicionamento digital, marketing, sites, sistemas e hospedagem.</p>
+        <div class="container footer-top">
+            <a class="footer-logo" href="#inicio" aria-label="Anoar — início">
+                <img src="assets/img/anoar-wordmark.svg" alt="Anoar">
+            </a>
+
+            <div class="footer-services">
+                <span>Posicionamento</span>
+                <span>Marketing</span>
+                <span>Sites</span>
+                <span>Sistemas</span>
+                <span>Hospedagem</span>
             </div>
 
-            <div class="footer-nav">
-                <div>
-                    <span>Site</span>
-                    <a href="#solucoes">Soluções</a>
-                    <a href="#metodo">Como trabalhamos</a>
-                    <a href="#infraestrutura">Hospedagem</a>
-                </div>
-                <div>
-                    <span>Contato</span>
-                    <a href="<?= htmlspecialchars($projectWhatsapp, ENT_QUOTES) ?>" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-                    <a href="<?= htmlspecialchars($site['instagram_url'], ENT_QUOTES) ?>" target="_blank" rel="noopener noreferrer">Instagram</a>
-                </div>
+            <div class="footer-links">
+                <a href="<?= htmlspecialchars($projectWhatsapp, ENT_QUOTES) ?>" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+                <a href="<?= htmlspecialchars($site['instagram_url'], ENT_QUOTES) ?>" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
             </div>
         </div>
 
