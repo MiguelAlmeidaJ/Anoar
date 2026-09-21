@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-labelledby="title">
+  <title id="title">ANR.</title>
+  <rect width="500" height="500" fill="#1800ac"/>
+  <text x="250" y="333" text-anchor="middle" fill="#efeeea"
+        font-family="Arial, Helvetica, sans-serif" font-size="205" font-weight="800"
+        letter-spacing="-13">ANR.</text>
+</svg>
